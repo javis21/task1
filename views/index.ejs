@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../views/style.css" type="text/css" >
+
+    <title>task1</title>
+</head>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  
+  input,select {
+    width: 15%;
+    padding: 9px;
+    margin: 15px;
+    border: 2px solid black;
+    font-weight:bold;
+    color: black;
+  }
+  input[type=submit] {
+  background-color: orange;
+  color: black;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: white;
+  color: orange;
+  border: 1px solid black;
+
+  
+}
+p{
+  padding-left: 40%;
+  text-align: left;
+}
+label{
+  width: 240px;
+  display:inline-block;
+}
+  
+  
+  </style>
+<body> 
+  <div style="text-align: center;font-weight: bold;font-family: Verdana, Geneva, Tahoma, sans-serif;"> 
+        <form >
+            <h4>Registration Form</h4>
+            <!-- Input from User -->
+             <label for="text">Assessment Title</label>
+            <input type="text" placeholder='Text' id="text"><br>
+
+           <label for="date">Date</label>
+            <input type="date" placeholder='Date picker' id="date"><br>
+
+            <label for="email">Contact </label>
+            <input type="email" placeholder='Email' id="email"><br>
+
+             <label for="list">Industry </label>
+            <!-- <input type="list" placeholder='List of industries' id="list"><br> -->
+
+            <select id="list" name="list " >
+              <option value="List of industries">List of industries</option>
+
+              <option value="healthcare">healthcare</option>
+              <option value="IT">IT</option>
+              <option value="servies">servies</option>
+              <option value="robotics">robotics</option>
+            </select>
+            <br>
+
+
+            <input id='btn' name="Register" type="submit" placeholder='Register' value="Register"  onclick="register(event)">
+        </form>
+        -----------------------------------------------------------------
+        <!-- Output Form Details -->
+        <p><h1  style="">Output</h1></p>
+        <p> You entered the following data</p>
+        <br>
+        <p>Assessment Title : <span id="display_text"></span></p>
+        <p>Date : <span id="display_date"></span></p>
+        <p>Contact: <span id="display_email"></span></p>
+        <p>Industry : <span id="display_list"></span></p>
+
+
+
+      </div>
+        
+   
+    <script>
+    const register = function (event) {
+    // Receive user input
+    let r_text = document.querySelector("#text").value;
+    let r_date = document.querySelector("#date").value;
+
+    let r_email = document.querySelector("#email").value;
+    let r_list = document.querySelector("#list").value;
+
+    // Output on page
+    display_text.innerHTML = r_text;
+    display_date.innerHTML = r_date;
+
+    display_email.innerHTML = r_email;
+    display_list.innerHTML = r_list;
+
+    event.preventDefault();
+    };
+    </script>
+</body>
+</html>
+  </div>
+</body>
+</html>
